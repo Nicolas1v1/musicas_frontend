@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg-base: #07090e;
+    --surface: rgba(17, 22, 34, 0.78);
+    --input-bg: rgba(9, 12, 19, 0.75);
+    --border: rgba(255, 255, 255, 0.09);
+    --primary: #0284c7;
+    --accent: #8b5cf6;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: var(--bg-base);
+    background-image: 
+        radial-gradient(circle at 20% 15%, rgba(6, 182, 212, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 80% 85%, rgba(139, 92, 246, 0.18) 0%, transparent 45%),
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    min-height: 100%;
+    padding: 40px 20px;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--surface);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    color: var(--text-main);
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 36px 38px 42px;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #06b6d4, #6366f1);
+}
+
+a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #7dd3fc;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.88rem;
+    background: rgba(6, 182, 212, 0.12);
+    border: 1px solid rgba(6, 182, 212, 0.25);
+    padding: 8px 16px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+    transition: all 0.25s ease;
+}
+
+a::before {
+    content: '←';
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+a:hover {
+    background: rgba(6, 182, 212, 0.22);
+    border-color: rgba(6, 182, 212, 0.5);
+    color: #ffffff;
+}
+
+a:hover::before {
+    transform: translateX(-3px);
+}
+
+h1 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+    background: linear-gradient(135deg, #ffffff 25%, #38bdf8 70%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #ffffff;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.35);
+    transition: all 0.25s ease;
+}
+
+input:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+input:focus {
+    outline: none;
+    border-color: #06b6d4;
+    background-color: rgba(15, 20, 32, 0.95);
+    box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#botaoSalvar {
+    width: 100%;
+    background: linear-gradient(135deg, #0284c7, #4f46e5);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1.02rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.55);
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#botaoSalvar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -5px rgba(2, 132, 199, 0.75);
+    filter: brightness(1.08);
+}
+
+#botaoSalvar:active {
+    transform: translateY(0);
+}
